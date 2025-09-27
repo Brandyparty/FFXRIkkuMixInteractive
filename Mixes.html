@@ -21,12 +21,12 @@
 </style>
 <body>
 	<div class="leftAligned">
-		<select id="FirstIngredient" name="----" class="leftAligned">>
+		<select id="FirstIngredient" name="----" class="leftAligned" onchange="MixThem()">
 		</select>
 	</div>
 	
 	<div class="rightAligned">
-		<select id="SecondIngredient" name="----" class="rightAligned">
+		<select id="SecondIngredient" name="----" class="rightAligned" onchange="MixThem()">
 		</select>
 	</div>
 	
@@ -228,6 +228,12 @@
 		'Siegesrausch'
 	];
 	
+	const combinations = {
+		'Potion': {
+			'Potion': 'Ultra-Potion'
+		}
+	};
+	
 	console.log(mixDescriptions);
 	for (const [mix, description] of Object.entries(mixDescriptions)) {
 		console.log(mix);
@@ -238,6 +244,14 @@
 		MixUpdate();
 	};
 	
+	ingredients.forEach((ingredient) => {
+		const ingredientOption = new Option(ingredient, ingredient, false, false);
+		document.getElementById('FirstIngredient').appendChild(ingredientOption);
+		
+		const ingredientOption2 = new Option(ingredient, ingredient, false, false);
+		document.getElementById('SecondIngredient').appendChild(ingredientOption2);
+	});
+	
 	
 	function MixUpdate() {
 		console.log("mixUpdate");
@@ -245,6 +259,24 @@
 		console.log(mixDescriptions[selected]);
 		
 		document.getElementById('MixDescription').innerHTML = mixDescriptions[selected];
+		
+		//TODO if ingredients are not valid for this get the recommended combinations
+	}
+	
+	function MixThem() {
+		const firstIngredient = document.getElementById('FirstIngredient').value;
+		const secondIngredient = document.getElementById('SecondIngredient').value;
+		
+		
+		if (typeof combinations[firstIngredient] !== 'undefined' && typeof combinations[firstIngredient][secondIngredient] !== 'undefined') {
+			document.getElementById('Mix').value = combinations[firstIngredient][secondIngredient];
+			document.getElementById('Mix').dispatchEvent(new Event('change'));
+		} else if (typeof combinations[secondIngredient] === 'undefined' || typeof combinations[secondIngredient][firstIngredient] !== 'undefined') {
+			alert('Konnte Mix nicht finden!');
+		} else {
+			document.getElementById('Mix').value = combinations[secondIngredient][firstIngredient];
+			document.getElementById('Mix').dispatchEvent(new Event('change'));
+		}
 	}
 	
 	
