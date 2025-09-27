@@ -231,13 +231,699 @@
 	const combinations = {
 		'Potion': {
 			'Potion': 'Ultra-Potion'
+		},
+		'Hi-Potion': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Vital'
+		},
+		'X-Potion': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Vital',
+			'X-Potion': 'Vital'
+		},
+		'Mega-Potion': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Endelixier',
+			'Mega-Potion': 'Endelixier'
+		},
+		'Äther': {
+			'Potion': 'Mental',
+			'Hi-Potion': 'Mental',
+			'X-Potion': 'Mental',
+			'Mega-Potion': 'Mental',
+			'Äther': 'Super-Mental'
+		},
+		'Turbo-Äther': {
+			'Potion': 'Super-Mental',
+			'Hi-Potion': 'Super-Mental',
+			'X-Potion': 'Super-Mental',
+			'Mega-Potion': 'Super-Mental',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental'
+		},
+		'Phönixfeder': {
+			'Potion': 'Mega-Phönix',
+			'Hi-Potion': 'Mega-Phönix',
+			'X-Potion': 'Mega-Phönix',
+			'Mega-Potion': 'Mega-Phönix',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix'
+		},
+		'Mega-Phönix': {
+			'Potion': 'Final-Phönix',
+			'Hi-Potion': 'Final-Phönix',
+			'X-Potion': 'Final-Phönix',
+			'Mega-Potion': 'Final-Phönix',
+			'Äther': 'MP-Freiheit',
+			'Turbo-Äther': 'MP-Freiheit EX',
+			'Phönixfeder': 'Endelixier',
+			'Mega-Phönix': 'Final-Phönix'
+		},
+		'Elixir': {
+			'Potion': 'Endelixier',
+			'Hi-Potion': 'Endelixier',
+			'X-Potion': 'Endelixier',
+			'Mega-Potion': 'Endelixier',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Endelixier',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier'
+		},
+		'Final-Elixir': {
+			'Potion': 'Superelixier',
+			'Hi-Potion': 'Superelixier',
+			'X-Potion': 'Superelixier',
+			'Mega-Potion': 'Superelixier',
+			'Äther': 'Superelixier',
+			'Turbo-Äther': 'Superelixier',
+			'Phönixfeder': 'Superelixier',
+			'Mega-Phönix': 'Superelixier',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Anspornmittel'
+		},
+		'Antidot': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler'
+		},
+		'Goldnadel': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler'
+		},
+		'Augentropfen': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler'
+		},
+		'Echokraut': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler'
+		},
+		'Weihwasser': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler'
+		},
+		'Allheilmittel': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Allesheiler',
+			'X-Potion': 'Allesheiler',
+			'Mega-Potion': 'Allesheiler',
+			'Äther': 'MP-Freiheit',
+			'Turbo-Äther': 'MP-Freiheit EX',
+			'Phönixfeder': 'Allesheiler',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler'
+		},
+		'Kraftzettel': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Ultra-Potion',
+			'Mega-Potion': 'Ultra-Potion',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Impetus'
+		},
+		'Wunderzettel': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Ultra-Potion',
+			'Mega-Potion': 'Ultra-Potion',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Impetus',
+			'Wunderzettel': 'Impetus'
+		},
+		'Zeitzettel': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Ultra-Potion',
+			'Mega-Potion': 'Ultra-Potion',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Impetus',
+			'Wunderzettel': 'Impetus',
+			'Zeitzettel': 'Impetus'
+		},
+		'Ability-Zettel': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Ultra-Potion',
+			'Mega-Potion': 'Ultra-Potion',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Impetus',
+			'Wunderzettel': 'Impetus',
+			'Zeitzettel': 'Impetus',
+			'Ability-Zettel': 'Impetus'
+		},
+		'Al Bhed-Medizin': {
+			'Potion': 'Ultra-Potion',
+			'Hi-Potion': 'Ultra-Potion',
+			'X-Potion': 'Ultra-Potion',
+			'Mega-Potion': 'Ultra-Potion',
+			'Äther': 'Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Superelixier',
+			'Antidot': 'Allesheiler',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Ultra-Potion',
+			'Wunderzettel': 'Ultra-Potion',
+			'Zeitzettel': 'Ultra-Potion',
+			'Ability-Zettel': 'Ultra-Potion',
+			'Al Bhed-Medizin': 'Ultra-Potion'
+		},
+		'Heilwasser': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Endelixier',
+			'X-Potion': 'Endelixier',
+			'Mega-Potion': 'Endelixier',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Endelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Endelixier',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Endelixier',
+			'Wunderzettel': 'Endelixier',
+			'Zeitzettel': 'Endelixier',
+			'Ability-Zettel': 'Endelixier',
+			'Al Bhed-Medizin': 'Endelixier',
+			'Heilwasser': 'Superelixier'
+		},
+		'Tetra-Element': {
+			'Potion': 'Allesheiler',
+			'Hi-Potion': 'Endelixier',
+			'X-Potion': 'Endelixier',
+			'Mega-Potion': 'Endelixier',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Mega-Phönix',
+			'Mega-Phönix': 'Final-Phönix',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Endelixier',
+			'Goldnadel': 'Allesheiler',
+			'Augentropfen': 'Allesheiler',
+			'Echokraut': 'Allesheiler',
+			'Weihwasser': 'Allesheiler',
+			'Allheilmittel': 'Allesheiler',
+			'Kraftzettel': 'Endelixier',
+			'Wunderzettel': 'Endelixier',
+			'Zeitzettel': 'Endelixier',
+			'Ability-Zettel': 'Endelixier',
+			'Al Bhed-Medizin': 'Endelixier',
+			'Heilwasser': 'Superelixier',
+			'Tetra-Element': ''
+		},
+		'Antarktis-Wind': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Kalter Schnee',
+			'Goldnadel': 'Kalter Schnee',
+			'Augentropfen': 'Kalter Schnee',
+			'Echokraut': 'Kalter Schnee',
+			'Weihwasser': 'Kalter Schnee',
+			'Allheilmittel': 'Kalter Schnee',
+			'Kraftzettel': 'Kalter Schnee',
+			'Wunderzettel': 'Kalter Schnee',
+			'Zeitzettel': 'Kalter Schnee',
+			'Ability-Zettel': 'Kalter Schnee',
+			'Al Bhed-Medizin': 'Kalter Schnee',
+			'Heilwasser': 'Eisiger Wind',
+			'Tetra-Element': '',
+			'Antarktis-Wind': ''
+		},
+		'Polar-Wind': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Kalter Schnee',
+			'Goldnadel': 'Kalter Schnee',
+			'Augentropfen': 'Kalter Schnee',
+			'Echokraut': 'Kalter Schnee',
+			'Weihwasser': 'Kalter Schnee',
+			'Allheilmittel': 'Kalter Schnee',
+			'Kraftzettel': 'Kalter Schnee',
+			'Wunderzettel': 'Kalter Schnee',
+			'Zeitzettel': 'Kalter Schnee',
+			'Ability-Zettel': 'Kalter Schnee',
+			'Al Bhed-Medizin': 'Eisiger Wind',
+			'Heilwasser': 'Eisiger Wind',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': ''
+		},
+		'Kältestein': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Eisiger Wind',
+			'Goldnadel': 'Eisiger Wind',
+			'Augentropfen': 'Eisiger Wind',
+			'Echokraut': 'Eisiger Wind',
+			'Weihwasser': 'Eisiger Wind',
+			'Allheilmittel': 'Eisiger Wind',
+			'Kraftzettel': 'Eisiger Wind',
+			'Wunderzettel': 'Eisiger Wind',
+			'Zeitzettel': 'Eisiger Wind',
+			'Ability-Zettel': 'Eisiger Wind',
+			'Al Bhed-Medizin': 'Eisiger Wind',
+			'Heilwasser': 'Eisiger Wind',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': '',
+			'Kältestein': ''
+		},
+		'Bomber-Splitter': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Heißes Eisen',
+			'Goldnadel': 'Heißes Eisen',
+			'Augentropfen': 'Heißes Eisen',
+			'Echokraut': 'Heißes Eisen',
+			'Weihwasser': 'Heißes Eisen',
+			'Allheilmittel': 'Heißes Eisen',
+			'Kraftzettel': 'Heißes Eisen',
+			'Wunderzettel': 'Heißes Eisen',
+			'Zeitzettel': 'Heißes Eisen',
+			'Ability-Zettel': 'Heißes Eisen',
+			'Al Bhed-Medizin': 'Heißes Eisen',
+			'Heilwasser': 'Feuersturm',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': '',
+			'Kältestein': '',
+			'Bomber-Splitter': ''
+		},
+		'Bomber-Seele': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Heißes Eisen',
+			'Goldnadel': 'Heißes Eisen',
+			'Augentropfen': 'Heißes Eisen',
+			'Echokraut': 'Heißes Eisen',
+			'Weihwasser': 'Heißes Eisen',
+			'Allheilmittel': 'Heißes Eisen',
+			'Kraftzettel': 'Heißes Eisen',
+			'Wunderzettel': 'Heißes Eisen',
+			'Zeitzettel': 'Heißes Eisen',
+			'Ability-Zettel': 'Heißes Eisen',
+			'Al Bhed-Medizin': 'Feuersturm',
+			'Heilwasser': 'Feuersturm',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': '',
+			'Kältestein': '',
+			'Bomber-Splitter': '',
+			'Bomber-Seele': ''
+		},
+		'Hitzestein': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Feuersturm',
+			'Goldnadel': 'Feuersturm',
+			'Augentropfen': 'Feuersturm',
+			'Echokraut': 'Feuersturm',
+			'Weihwasser': 'Feuersturm',
+			'Allheilmittel': 'Feuersturm',
+			'Kraftzettel': 'Feuersturm',
+			'Wunderzettel': 'Feuersturm',
+			'Zeitzettel': 'Feuersturm',
+			'Ability-Zettel': 'Feuersturm',
+			'Al Bhed-Medizin': 'Feuersturm',
+			'Heilwasser': 'Feuersturm',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': '',
+			'Kältestein': '',
+			'Bomber-Splitter': '',
+			'Bomber-Seele': '',
+			'Hitzestein': ''
+		},
+		'Elektrokugel': {
+			'Potion': 'Exall',
+			'Hi-Potion': 'Super-Exall',
+			'X-Potion': 'Super-Exall',
+			'Mega-Potion': 'Super-Exall',
+			'Äther': 'Super-Mental',
+			'Turbo-Äther': 'Super-Mental',
+			'Phönixfeder': 'Exall',
+			'Mega-Phönix': 'Super-Exall',
+			'Elixir': 'Superelixier',
+			'Final-Elixir': 'Final-Elixier',
+			'Antidot': 'Gewitterfront',
+			'Goldnadel': 'Gewitterfront',
+			'Augentropfen': 'Gewitterfront',
+			'Echokraut': 'Gewitterfront',
+			'Weihwasser': 'Gewitterfront',
+			'Allheilmittel': 'Gewitterfront',
+			'Kraftzettel': 'Gewitterfront',
+			'Wunderzettel': 'Gewitterfront',
+			'Zeitzettel': 'Gewitterfront',
+			'Ability-Zettel': 'Gewitterfront',
+			'Al Bhed-Medizin': 'Gewitterfront',
+			'Heilwasser': 'Donnerschlag',
+			'Tetra-Element': '',
+			'Antarktis-Wind': '',
+			'Polar-Wind': '',
+			'Kältestein': '',
+			'Bomber-Splitter': '',
+			'Bomber-Seele': '',
+			'Hitzestein': ''
+		},
+		'Blitzkugel': {
+		},
+		'Donnerstein': {
+		},
+		'Fischschuppe': {
+		},
+		'Drachenschuppe': {
+		},
+		'Nässestein': {
+		},
+		'Handgranate': {
+		},
+		'Panzergranate': {
+		},
+		'Schlafpuder': {
+		},
+		'Traumpuder': {
+		},
+		'Silentium-Mine': {
+		},
+		'Rauchbombe': {
+		},
+		'Schwarzer Stein': {
+		},
+		'Lichtstein': {
+		},
+		'Heiliger Stein': {
+		},
+		'Himmelsstein': {
+		},
+		'Giftkralle': {
+		},
+		'Silberne Sanduhr': {
+		},
+		'Goldene Sanduhr': {
+		},
+		'Todeskerze': {
+		},
+		'Perseus-Granate': {
+		},
+		'Todesschatten': {
+		},
+		'Wind des Jenseits': {
+		},
+		'Bonzenmesser': {
+		},
+		'Dunkelkristall': {
+		},
+		'Chocobo-Daune': {
+		},
+		'Chocobo-Feder': {
+		},
+		'Mondschleier': {
+		},
+		'Lichtschleier': {
+		},
+		'Sternenschleier': {
+		},
+		'Heilquelle': {
+		},
+		'Magiequelle': {
+		},
+		'Kraftquelle': {
+		},
+		'Lebensquelle': {
+		},
+		'Ablutionssalz': {
+		},
+		'HP-Pille': {
+		},
+		'MP-Pille': {
+		},
+		'Zweigestirn': {
+		},
+		'HP-Wundermittel': {
+		},
+		'MP-Wundermittel': {
+		},
+		'Dreigestirn': {
+		},
+		'Kraft-Sphäroid': {
+		},
+		'Wunder-Sphäroid': {
+		},
+		'Zeit-Sphäroid': {
+		},
+		'Ability-Sphäroid': {
+		},
+		'Glücks-Sphäroid': {
+		},
+		'Para-Sphäroid': {
+		},
+		'Spezial-Sphäroid': {
+		},
+		'Tech-Sphäroid': {
+		},
+		'Weiß-Sphäroid': {
+		},
+		'Schwarz-Sphäroid': {
+		},
+		'Super-Sphäroid': {
+		},
+		'Lv.1 Sphäropass': {
+		},
+		'Lv.2 Sphäropass': {
+		},
+		'Lv.3 Sphäropass': {
+		},
+		'Lv.4 Sphäropass': {
+		},
+		'HP-Sphäroid': {
+		},
+		'MP-Sphäroid': {
+		},
+		'Angriffs-Sphäroid': {
+		},
+		'Abwehr-Sphäroid': {
+		},
+		'Magie-Sphäroid': {
+		},
+		'Z-Abwehr-Sphäroid': {
+		},
+		'Geschick-Sphäroid': {
+		},
+		'Reflex-Sphäroid': {
+		},
+		'Treffer-Sphäroid': {
+		},
+		'Fortuna-Sphäroid': {
+		},
+		'Spreng-Sphäroid': {
+		},
+		'Rück-Sphäroid': {
+		},
+		'Freund-Sphäroid': {
+		},
+		'Teleport-Sphäroid': {
+		},
+		'Warp-Sphäroid': {
+		},
+		'Weltkarte': {
+		},
+		'Tintenkiller': {
+		},
+		'Aufputschmittel': {
+		},
+		'Hypello-Medizin': {
+		},
+		'Exorzistendorne': {
+		},
+		'Pendel': {
+		},
+		'Amulett': {
+		},
+		'Tor der Zukunft': {
+		},
+		'Gigantenflügel': {
+		},
+		'Zockerseele': {
+		},
+		'Wendeblatt': {
+		},
+		'Siegesrausch': {
 		}
 	};
 	
-	console.log(mixDescriptions);
+	const recommendedCombinations = {
+		
+	};
+	
 	for (const [mix, description] of Object.entries(mixDescriptions)) {
-		console.log(mix);
-		console.log(description);
 		const mixOption = new Option(mix, mix, false, false);
 		document.getElementById('Mix').appendChild(mixOption);
 		
