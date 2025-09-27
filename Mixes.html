@@ -1,0 +1,252 @@
+<html>
+<style>
+	.leftAligned {
+		width: 40%;
+		display: block;
+		float: left;
+	}
+	.centered {
+		margin: auto;
+		width: 50%;
+	}
+	.descriptionBox {
+		height: 10%;
+	}
+	.rightAligned {
+		width: 40%;
+		display: block;
+		margin-left: auto;
+		margin-right: 0;
+	}
+</style>
+<body>
+	<div class="leftAligned">
+		<select id="FirstIngredient" name="----" class="leftAligned">>
+		</select>
+	</div>
+	
+	<div class="rightAligned">
+		<select id="SecondIngredient" name="----" class="rightAligned">
+		</select>
+	</div>
+	
+	<br/>
+	<div class="centered">
+		<select id="Mix" name="----" class="centered" onchange="MixUpdate()">
+		</select>
+		<textarea id="MixDescription" class="centered descriptionBox">
+		</textarea>
+	</div>
+
+
+</body>
+<script>
+	const mixDescriptions = {
+		'Ultra-Potion': 'Regeneriert die HP aller Charaktere vollständig.',
+		'Allesheiler': 'Entfernt negative Zustände von allen Charakteren. Todesurteil sowie Kraft-, Panzer-, Magie- und Geistbrecher werden nicht entfernt.',
+		'Ultraheiler': 'Entfernt alle negativen Zustände und regeneriert 50% der maximalen HP aller Charaktere.',
+		'Mega-Phönix': 'Belebt alle gefallenen Charaktere mit vollen HP wieder.',
+		'Final-Phönix': 'Regeneriert die HP aller Charaktere vollständig und belebt gefallene Charaktere mit vollen HP wieder.',
+		'Elixier': 'Regeneriert die HP und MP eines Charakters vollständig (max. 9.999 HP).',
+		'Endelixier': 'Regeneriert die HP und MP aller Charaktere vollständig (max. 9.999 HP).',
+		'Superelixier': 'Entfernt alle negativen Zustände und regeneriert die HP und MP aller Charaktere vollständig.',
+		'Final-Elixier': 'Entfernt alle negativen Zustände, regeneriert die HP und MP aller Charaktere vollständig und belebt gefallene Charaktere mit vollen HP wieder.',
+		
+		'Exall': 'Verleiht einem Charakter Exfeu, Exeis, Exblitz und Exwass.',
+		'Super-Exall': 'Verleiht allen Charakteren Exfeu, Exeis, Exblitz und Exwass.',
+		'Mega-Exall': 'Verleiht allen Charakteren 5x Anfeuern und 5x Sammeln, sowie Exfeu, Exeis, Exblitz und Exwass.',
+		'Ultra-Exall': 'Verleiht allen Charakteren je 5x Anfeuern, Sammeln, Anpeilen und Ahnen, sowie Exfeu, Exeis, Exblitz und Exwass.',
+		'Vital': 'Verdoppelt die maximalen HP eines Charakters.',
+		'Super-Vital': 'Verdoppelt die maximalen HP aller Charaktere.',
+		'Mega-Vital': 'Verdoppelt die maximalen HP aller Charaktere und verleiht ihnen 5x Anfeuern.',
+		'Mental': 'Verdoppelt die maximalen MP eines Charakters.',
+		'Super-Mental': 'Verdoppelt die maximalen MP aller Charaktere.',
+		'Mega-Mental': 'Verdoppelt die maximalen MP aller Charaktere und verleiht ihnen 5x Sammeln.',
+		'Gesamtabwehr': 'Verleiht allen Charakteren Protes und Shell.',
+		'Impetus': 'Verleiht allen Charakteren Protes, Shell und Hast.',
+		'Infusion': 'Verleiht allen Charakteren Protes, Shell, Hast und Regena.',
+		'Unfallschutz': 'Verleiht allen Charakteren Protes, Shell, Hast, Regena und Schutzengel.',
+		'MP-Freiheit': 'Setzt die MP-Kosten der Fähigkeiten eines Charakters auf 0.',
+		'MP-Freiheit EX': 'Setzt die MP-Kosten der Fähigkeiten aller Charaktere auf 0.',
+		'Heldentrank': 'Erhöht die kritische Trefferrate eines Charakters.',
+		'Heerestrank': 'Erhöht die kritische Trefferrate aller Charaktere.',
+		'Quartett 9': 'Jede Aktion eines Charakters richtet mindestens 9.999 HP Schaden an oder regeneriert 9.999 HP.',
+		'Quartett 99': 'Die Ekstase-Leiste aller Charaktere füllt sich 50% schneller.',
+		'Anspornmittel': 'Die Ekstase-Leiste aller Charaktere füllt sich 50% schneller.',
+		'Exzentrequilla': 'Die Ekstase-Leiste aller Charaktere füllt sich 100% schneller.',
+		
+		'Handgranate': 'Erteilt allen Gegnern geringen Schaden.',
+		'Panzergranate': 'Erteilt allen Gegnern geringen Schaden und verursacht Panzerbrecher.',
+		'Dicke Berta': 'Erteilt allen Gegnern geringen Schaden und verursacht Blind, Stumm und Schlaf.',
+		'Risikohaubitze': 'Erteilt allen Gegnern Schaden und verursacht Gift, Blind, Stumm und Schlaf für vier Runden.',
+		'Hypergranate': 'Erteilt allen Gegnern Schaden.',
+		'Panikbombe': 'Erteilt allen Gegnern Schaden und verursacht Gift, Blind, Stumm und Schlaf für fünf Runden.',
+		'Mörser': 'Erteilt allen Gegnern hohen Schaden.',
+		'Granatwerfer': 'Erteilt allen Gegnern hohen Schaden.',
+		'Sprengladung': 'Erteilt allen Gegnern sehr hohen Schaden.',
+		'Chaosgranate': 'Erteilt allen Gegnern sehr hohen Schaden und verursacht Allesbrecher, Gemach, Gift, Blind, Stumm und Schlaf für acht Runden.',
+		'Lebensloch': 'Zieht allen Gegnern 3/4 ihrer aktuellen HP ab.',
+		'Wurmloch': 'Zieht allen Gegnern 15/16 ihrer aktuellen HP ab.',
+		'Supernova': 'Zieht allen Gegnern 19.998 HP ab.',
+		
+		'Heißes Eisen': 'Erteilt zufälligen Gegnern geringen Hitze-Schaden. Trifft fünfmal.',
+		'Feuersturm': 'Erteilt zufälligen Gegnern Hitze-Schaden. Trifft sechsmal.',
+		'Flammenseele': 'Erteilt zufälligen Gegnern hohen Hitze-Schaden. Trifft neunmal.',
+		'Höllenfeuer': 'Erteilt zufälligen Gegnern Hitze-Schaden und verursacht Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		'Utgardlodern': 'Erteilt zufälligen Gegnern hohen Hitze-Schaden und verursacht Allesbrecher, Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		
+		'Kalter Schnee': 'Erteilt zufälligen Gegnern geringen Kälte-Schaden. Trifft fünfmal.',
+		'Eisiger Wind': 'Erteilt zufälligen Gegnern Kälte-Schaden. Trifft sechsmal.',
+		'Wintersturm': 'Erteilt zufälligen Gegnern hohen Kälte-Schaden. Trifft neunmal.',
+		'Eis Kontamina': 'Erteilt zufälligen Gegnern Kälte-Schaden und verursacht Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		'Kokytos': 'Erteilt zufälligen Gegnern hohen Kälte-Schaden und verursacht Allesbrecher, Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		
+		'Gewitterfront': 'Erteilt zufälligen Gegnern geringen Strom-Schaden. Trifft fünfmal.',
+		'Donnerschlag': 'Erteilt zufälligen Gegnern Strom-Schaden. Trifft sechsmal.',
+		'Blitzeinschlag': 'Erteilt zufälligen Gegnern hohen Strom-Schaden. Trifft neunmal.',
+		'Elektroschock': 'Erteilt zufälligen Gegnern Strom-Schaden und verursacht Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		'Taifun': 'Erteilt zufälligen Gegnern hohen Strom-Schaden und verursacht Allesbrecher, Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		
+		'Strömung': 'Erteilt zufälligen Gegnern geringen Nässe-Schaden. Trifft fünfmal.',
+		'Wasserfall': 'Erteilt zufälligen Gegnern Nässe-Schaden. Trifft sechsmal.',
+		'Flutwelle': 'Erteilt zufälligen Gegnern hohen Nässe-Schaden. Trifft neunmal.',
+		'Aquatoxin': 'Erteilt zufälligen Gegnern Nässe-Schaden und verursacht Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.',
+		'Dunkler Regen': 'Erteilt zufälligen Gegnern hohen Nässe-Schaden und verursacht Allesbrecher, Gift, Blind, Stumm und Schlaf für drei Runden. Trifft dreimal.'
+	};
+	const ingredients = [
+		'Potion',
+		'Hi-Potion',
+		'X-Potion',
+		'Mega-Potion',
+		'Äther',
+		'Turbo-Äther',
+		'Phönixfeder',
+		'Mega-Phönix',
+		'Elixir',
+		'Final-Elixir',
+		'Antidot',
+		'Goldnadel',
+		'Augentropfen',
+		'Echokraut',
+		'Weihwasser',
+		'Allheilmittel',
+		'Kraftzettel',
+		'Wunderzettel',
+		'Zeitzettel',
+		'Ability-Zettel',
+		'Al Bhed-Medizin',
+		'Heilwasser',
+		'Tetra-Element',
+		'Antarktis-Wind',
+		'Polar-Wind',
+		'Kältestein',
+		'Bomber-Splitter',
+		'Bomber-Seele',
+		'Hitzestein',
+		'Elektrokugel',
+		'Blitzkugel',
+		'Donnerstein',
+		'Fischschuppe',
+		'Drachenschuppe',
+		'Nässestein',
+		'Handgranate',
+		'Panzergranate',
+		'Schlafpulver',
+		'Traumpuder',
+		'Silentium-Mine',
+		'Rauchbombe',
+		'Schwarzer Stein',
+		'Lichtstein',
+		'Heiliger Stein',
+		'Himmelsstein',
+		'Giftkralle',
+		'Silberne Sanduhr',
+		'Goldene Sanduhr',
+		'Todeskerze',
+		'Perseus-Granate',
+		'Todesschatten',
+		'Wind des Jenseits',
+		'Bonzenmesser',
+		'Dunkelkristall',
+		'Chocobo-Daune',
+		'Chocobo-Feder',
+		'Mondschleier',
+		'Lichtschleier',
+		'Sternenschleier',
+		'Heilquelle',
+		'Magiequelle',
+		'Kraftquelle',
+		'Lebensquelle',
+		'Ablutionssalz',
+		'HP-Pille',
+		'MP-Pille',
+		'Zweigestirn',
+		'HP-Wundermittel',
+		'MP-Wundermittel',
+		'Dreigestirn',
+		'Kraft-Sphäroid',
+		'Wunder-Sphäroid',
+		'Zeit-Sphäroid',
+		'Ability-Sphäroid',
+		'Glücks-Sphäroid',
+		'Para-Sphäroid',
+		'Spezial-Sphäroid',
+		'Tech-Sphäroid',
+		'Weiß-Sphäroid',
+		'Schwarz-Sphäroid',
+		'Super-Sphäroid',
+		'Lv.1 Sphäropass',
+		'Lv.2 Sphäropass',
+		'Lv.3 Sphäropass',
+		'Lv.4 Sphäropass',
+		'HP-Sphäroid',
+		'MP-Sphäroid',
+		'Angriffs-Sphäroid',
+		'Abwehr-Sphäroid',
+		'Magie-Sphäroid',
+		'Z-Abwehr-Sphäroid',
+		'Geschick-Sphäroid',
+		'Reflex-Sphäroid',
+		'Treffer-Sphäroid',
+		'Fortune-Sphäroid',
+		'Spreng-Sphäroid',
+		'Rück-Sphäroid',
+		'Freund-Sphäroid',
+		'Teleport-Sphäroid',
+		'Warp-Sphäroid',
+		'Weltkarte',
+		'Tintenkiller',
+		'Aufputschmittel',
+		'Hypello-Medizin',
+		'Exorzistendorne',
+		'Pendel',
+		'Amulett',
+		'Tor der Zukunft',
+		'Gigantenflügel',
+		'Zockerseele',
+		'Wendeblatt',
+		'Siegesrausch'
+	];
+	
+	console.log(mixDescriptions);
+	for (const [mix, description] of Object.entries(mixDescriptions)) {
+		console.log(mix);
+		console.log(description);
+		const mixOption = new Option(mix, mix, false, false);
+		document.getElementById('Mix').appendChild(mixOption);
+		
+		MixUpdate();
+	};
+	
+	
+	function MixUpdate() {
+		console.log("mixUpdate");
+		const selected = document.getElementById('Mix').value;
+		console.log(mixDescriptions[selected]);
+		
+		document.getElementById('MixDescription').innerHTML = mixDescriptions[selected];
+	}
+	
+	
+</script>
+</html>
