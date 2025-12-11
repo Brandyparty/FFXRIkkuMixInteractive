@@ -6776,6 +6776,7 @@
 		document.getElementById('MixDescription').innerHTML = mixDescriptions[selected];
 		
 		//If ingredients are not valid for this get the recommended combinations
+		/*
 		if (
 			typeof combinations[firstIngredient] !== 'undefined' && typeof combinations[firstIngredient][secondIngredient] !== 'undefined' && combinations[firstIngredient][secondIngredient] != selected ||
 			typeof combinations[secondIngredient] !== 'undefined' && typeof combinations[secondIngredient][firstIngredient] !== 'undefined' && combinations[secondIngredient][firstIngredient] != selected
@@ -6787,14 +6788,13 @@
 			console.log(combinations[firstIngredient]);
 			console.log(combinations[secondIngredient]);
 			console.log(recommendedCombinations[selected]);
-			
 		}
+		*/
 	}
 	
 	function MixThem() {
 		const firstIngredient = document.getElementById('FirstIngredient').value;
-		const secondIngredient = document.getElementById('SecondIngredient').value;
-		
+		const secondIngredient = document.getElementById('SecondIngredient').value;		
 		
 		if (typeof combinations[firstIngredient] !== 'undefined' && typeof combinations[firstIngredient][secondIngredient] !== 'undefined') {
 			document.getElementById('Mix').value = combinations[firstIngredient][secondIngredient];
