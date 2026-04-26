@@ -18,6 +18,13 @@
 		margin-left: auto;
 		margin-right: 0;
 	}
+	.fullBox {
+		width: 95%;
+		display: block;
+		margin: auto;
+		min-height: 30%;
+		margin-top: 5%;
+	}
 </style>
 <body>
 	<div class="leftAligned">
@@ -37,8 +44,10 @@
 		<textarea id="MixDescription" class="centered descriptionBox" disabled>
 		</textarea>
 	</div>
-
-
+	<div class="fullBox">
+		<textarea id="AllCombinations" class="fullbox" disabled>
+		</textarea>
+	</div>
 </body>
 <script>
 	const mixDescriptions = {
@@ -6813,6 +6822,8 @@
 			
 			console.log("Alle Kombinationen für dieses Ergebnis:");
 			console.log(combinationsByResult[selected]);
+			document.getElementById('AllCombinations').value = combinationsByResult[selected].join("\n");
+			
 			for (let i = 0; i < combinations.length; i++) {
 				for (let j = 0; j < combinations[i].length; j++) {
 					if (combinations[i][j] === selected) {
