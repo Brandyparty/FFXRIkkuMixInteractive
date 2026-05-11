@@ -6822,8 +6822,7 @@
 			
 			console.log("Alle Kombinationen für dieses Ergebnis:");
 			console.log(combinationsByResult[selected]);
-			document.getElementById('AllCombinations').value = combinationsByResult[selected].join("\n");
-			
+
 			for (let i = 0; i < combinations.length; i++) {
 				for (let j = 0; j < combinations[i].length; j++) {
 					if (combinations[i][j] === selected) {
@@ -6833,6 +6832,7 @@
 				}
 			}
 		}
+		document.getElementById('AllCombinations').value = combinationsByResult[selected].join("\n");
 	}
 	
 	function MixThem() {
